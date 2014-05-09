@@ -1,3 +1,9 @@
+lua5.1 (5.1.5-5pexip1) pexip; urgency=low
+
+  * Prepare Pexip packaging
+
+ -- John-Mark Bell <jmb@pexip.com>  Fri, 09 May 2014 14:00:21 +0000
+
 lua5.1 (5.1.5-5) unstable; urgency=low
 
   * Packaging moved to git
