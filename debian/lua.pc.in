@@ -4,7 +4,7 @@
 #deb_host_multiarch=x86_64-linux-gnu
 
 lib_name=lua${major_version}
-libdir=${prefix}/lib
+libdir=${prefix}/lib/${deb_host_multiarch}
 includedir=${prefix}/include
 
 #

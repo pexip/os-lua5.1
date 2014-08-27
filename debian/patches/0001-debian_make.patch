@@ -1,10 +1,18 @@
-Author: John V. Belmonte <jbelmonte@debian.org>
-Description: Add support for Debian package to makefiles.
-Index: lua5.1-5.1.5/Makefile
+From: "John V. Belmonte" <jbelmonte@debian.org>
+Date: Tue, 26 Aug 2014 16:20:49 +0200
+Subject: debian_make
+
 ===================================================================
---- lua5.1-5.1.5.orig/Makefile	2012-02-10 10:50:23.000000000 +0100
-+++ lua5.1-5.1.5/Makefile	2012-07-16 12:25:26.000000000 +0200
-@@ -12,7 +12,7 @@
+---
+ Makefile     | 29 ++++++++++++++++++++++++++++-
+ src/Makefile | 33 +++++++++++++++++++++++++++++++++
+ 2 files changed, 61 insertions(+), 1 deletion(-)
+
+diff --git a/Makefile b/Makefile
+index 209a132..98f9e31 100644
+--- a/Makefile
++++ b/Makefile
+@@ -12,7 +12,7 @@ PLAT= none
  INSTALL_TOP= /usr/local
  INSTALL_BIN= $(INSTALL_TOP)/bin
  INSTALL_INC= $(INSTALL_TOP)/include
@@ -13,7 +21,7 @@ Index: lua5.1-5.1.5/Makefile
  INSTALL_MAN= $(INSTALL_TOP)/man/man1
  #
  # You probably want to make INSTALL_LMOD and INSTALL_CMOD consistent with
-@@ -126,3 +126,30 @@
+@@ -126,3 +126,30 @@ lecho:
  .PHONY: all $(PLATS) clean test install local none dummy echo pecho lecho
  
  # (end of Makefile)
@@ -44,11 +52,11 @@ Index: lua5.1-5.1.5/Makefile
 +debian_linux:
 +	cd src; $(MAKE) debian_all CFLAGS+=-DLUA_USE_LINUX \
 +		LIB_LIBS="-lm -ldl" LUA_LIBS="-lreadline" LDFLAGS="$(LDFLAGS)"
-Index: lua5.1-5.1.5/src/Makefile
-===================================================================
---- lua5.1-5.1.5.orig/src/Makefile	2012-02-13 21:41:22.000000000 +0100
-+++ lua5.1-5.1.5/src/Makefile	2012-07-16 12:24:40.000000000 +0200
-@@ -180,3 +180,36 @@
+diff --git a/src/Makefile b/src/Makefile
+index e0d4c9f..8860c3b 100644
+--- a/src/Makefile
++++ b/src/Makefile
+@@ -180,3 +180,36 @@ print.o: print.c ldebug.h lstate.h lua.h luaconf.h lobject.h llimits.h \
    ltm.h lzio.h lmem.h lopcodes.h lundump.h
  
  # (end of Makefile)
