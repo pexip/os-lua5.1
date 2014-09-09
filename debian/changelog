@@ -1,3 +1,24 @@
+lua5.1 (5.1.5-7pexip1) pexip; urgency=low
+
+  * New upstream release.
+
+ -- John-Mark Bell <jmb@pexip.com>  Tue, 09 Sep 2014 14:54:06 +0100
+
+lua5.1 (5.1.5-7) unstable; urgency=medium
+
+  * Patch to fix stack overflow in vararg functions (CVE-2014-5461) 
+  * Add symlinks to .pc file in order to ease the life of developers:
+    {lua-5.1,lua51} -> lua5.1 (Closes: #498416)
+
+ -- Enrico Tassi <gareuselesinge@debian.org>  Wed, 27 Aug 2014 09:46:39 +0200
+
+lua5.1 (5.1.5-6) unstable; urgency=low
+
+  * Fix .pc file to not spit -L/usr/lib but -L/usr/lib/$DEB_HOST_MULTIARCH
+    (Closes: #723483)
+
+ -- Enrico Tassi <gareuselesinge@debian.org>  Tue, 17 Sep 2013 23:44:04 +0200
+
 lua5.1 (5.1.5-5pexip1) pexip; urgency=low
 
   * Prepare Pexip packaging

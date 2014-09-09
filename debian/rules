@@ -10,7 +10,11 @@ LIB_PACKAGE_NAME = lib$(LUA)-$(SONUM)
 
 PKG_DIR = $(DEB_DESTDIR)/lib/$(DEB_HOST_MULTIARCH)/pkgconfig
 PKG_CONFIG_FILE = $(PKG_DIR)/$(LUA).pc
+PKG_CONFIG_FILE_FBSD = $(PKG_DIR)/lua-5.1.pc
+PKG_CONFIG_FILE_NODOT = $(PKG_DIR)/lua51.pc
 PKGPP_CONFIG_FILE = $(PKG_DIR)/$(LUA)-c++.pc
+PKGPP_CONFIG_FILE_FBSD = $(PKG_DIR)/lua-5.1-c++.pc
+PKGPP_CONFIG_FILE_NODOT = $(PKG_DIR)/lua51-c++.pc
 DOC_DIR = debian/$(LUA)-doc/usr/share/doc/$(LUA)-doc
 
 LUA_MULTIARCH_INCLUDE = $(DEB_DESTDIR)/include/$(DEB_HOST_MULTIARCH)/
@@ -63,12 +67,16 @@ override_dh_install:
 	echo "lib_name_include=lua$(LUA_V)" >> $(PKG_CONFIG_FILE)
 	echo "deb_host_multiarch=$(DEB_HOST_MULTIARCH)" >> $(PKG_CONFIG_FILE)
 	cat debian/lua.pc.in >> $(PKG_CONFIG_FILE)
+	ln -s $(shell basename $(PKG_CONFIG_FILE)) $(PKG_CONFIG_FILE_FBSD)
+	ln -s $(shell basename $(PKG_CONFIG_FILE)) $(PKG_CONFIG_FILE_NODOT)
 	echo "prefix=/usr" > $(PKGPP_CONFIG_FILE)
 	echo "major_version=$(LUA_V)" >> $(PKGPP_CONFIG_FILE)
 	echo "version=$(LUA_FULL_V)" >> $(PKGPP_CONFIG_FILE)
 	echo "lib_name_include=lua$(LUA_V)" >> $(PKGPP_CONFIG_FILE)
 	echo "deb_host_multiarch=$(DEB_HOST_MULTIARCH)" >> $(PKGPP_CONFIG_FILE)
 	cat debian/lua-c++.pc.in >> $(PKGPP_CONFIG_FILE)
+	ln -s $(shell basename $(PKGPP_CONFIG_FILE)) $(PKGPP_CONFIG_FILE_FBSD)
+	ln -s $(shell basename $(PKGPP_CONFIG_FILE)) $(PKGPP_CONFIG_FILE_NODOT)
 	mkdir -p $(LUA_MULTIARCH_INCLUDE)
 	cp src/$(LUA_MULTIARCH) $(LUA_MULTIARCH_INCLUDE)
 	dh_install

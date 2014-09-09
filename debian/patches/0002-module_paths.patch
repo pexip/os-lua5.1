@@ -1,9 +1,16 @@
-Author: John V. Belmonte <jbelmonte@debian.org>
-Description: Set Lua's default PATH and CPATH.
-Index: lua5.1-5.1.5/src/luaconf.h
+From: "John V. Belmonte" <jbelmonte@debian.org>
+Date: Tue, 26 Aug 2014 16:20:49 +0200
+Subject: module_paths
+
 ===================================================================
---- lua5.1-5.1.5.orig/src/luaconf.h	2008-02-11 17:25:08.000000000 +0100
-+++ lua5.1-5.1.5/src/luaconf.h	2012-07-16 12:23:12.000000000 +0200
+---
+ src/luaconf.h | 11 +++++++++--
+ 1 file changed, 9 insertions(+), 2 deletions(-)
+
+diff --git a/src/luaconf.h b/src/luaconf.h
+index e2cb261..e63a718 100644
+--- a/src/luaconf.h
++++ b/src/luaconf.h
 @@ -94,14 +94,21 @@
  	".\\?.dll;"  LUA_CDIR"?.dll;" LUA_CDIR"loadall.dll"
  
