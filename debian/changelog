@@ -1,3 +1,11 @@
+lua5.1 (5.1.5-7.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Build-depend on libtool-bin. Closes: #761773.
+  * liblua5.1-0-dev: Recommend libtool-bin.
+
+ -- Matthias Klose <doko@debian.org>  Thu, 09 Oct 2014 09:49:29 +0000
+
 lua5.1 (5.1.5-7) unstable; urgency=medium
 
   * Patch to fix stack overflow in vararg functions (CVE-2014-5461) 
