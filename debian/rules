@@ -79,6 +79,8 @@ override_dh_install:
 	ln -s $(shell basename $(PKGPP_CONFIG_FILE)) $(PKGPP_CONFIG_FILE_NODOT)
 	mkdir -p $(LUA_MULTIARCH_INCLUDE)
 	cp src/$(LUA_MULTIARCH) $(LUA_MULTIARCH_INCLUDE)
+	mkdir -p $(DEB_DESTDIR)/share/lua$(LUA_V)/
+	cp debian/version-script $(DEB_DESTDIR)/share/lua$(LUA_V)/
 	dh_install
 
 override_dh_strip:

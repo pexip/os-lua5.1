@@ -78,13 +78,13 @@ index e0d4c9f..8860c3b 100644
 +
 +$(LIB_NAME) $(LIB_NAME:.la=.a): $(LIB_OBJS)
 +	$(LIBTOOL) --mode=link $(CC) -version-info $(LIB_VERSION) \
-+            -rpath $(RPATH) -o $(LIB_NAME) $(LIB_OBJS) $(LIB_LIBS)
++            -rpath $(RPATH) -Wl,--version-script,../debian/version-script -o $(LIB_NAME) $(LIB_OBJS) $(LIB_LIBS)
 +$(LIBPP_NAME) $(LIBPP_NAME:.la=.a): $(LIBPP_OBJS)
 +	$(LIBTOOLPP) --mode=link $(CXX) -version-info $(LIB_VERSION) \
-+            -rpath $(RPATH) -o $(LIBPP_NAME) $(LIBPP_OBJS) $(LIB_LIBS)
++            -rpath $(RPATH) -Wl,--version-script,../debian/version-script -o $(LIBPP_NAME) $(LIBPP_OBJS) $(LIB_LIBS)
 +
 +lua$(V): $(LUA_O) $(LIB_NAME)
-+	$(LIBTOOL) --mode=link $(CC) -static -Wl,-E -o $@ $(LUA_O) $(LIB_NAME) $(LUA_LIBS) $(LDFLAGS)
++	$(LIBTOOL) --mode=link $(CC) -Wl,--version-script,../debian/version-script -static -Wl,-E -o $@ $(LUA_O) $(LIB_NAME) $(LUA_LIBS) $(LDFLAGS)
 +
 +luac$(V): $(LUAC_O) $(LIB_NAME)
 +	$(LIBTOOL) --mode=link $(CC) -static -o $@ $(LUAC_O) $(LIB_NAME)
