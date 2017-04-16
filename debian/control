@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Pexip AS <packaging@pexip.com>
 XSBC-Pexip-Original-Maintainer: John V. Belmonte <jbelmonte@debian.org>
 XSBC-Pexip-Original-Uploaders: Enrico Tassi <gareuselesinge@debian.org>
-Build-Depends: debhelper (>= 9), quilt (>= 0.40), libtool, libreadline-dev
+Build-Depends: debhelper (>= 9), quilt (>= 0.40), libtool, libtool-bin, libreadline-dev
 Standards-Version: 3.9.3
 Homepage: http://www.lua.org
 Vcs-Git: git://git.debian.org/git/pkg-lua/lua5.1.git
@@ -46,7 +46,7 @@ Conflicts: liblua5.1-dev
 Architecture: any
 Multi-Arch: same
 Depends: liblua5.1-0 (= ${binary:Version}), libc6-dev|libc-dev, libreadline-dev, ${misc:Depends}
-Recommends: pkg-config, libtool
+Recommends: pkg-config, libtool, libtool-bin
 Section: libdevel
 Description: Development files for the Lua language version 5.1
  Lua is a powerful, light-weight programming language designed for extending

@@ -1,3 +1,17 @@
+lua5.1 (5.1.5-7.1pexip1) pexip; urgency=low
+
+  * New upstream release.
+
+ -- John-Mark Bell <jmb@pexip.com>  Mon, 17 Apr 2017 00:48:17 +0100
+
+lua5.1 (5.1.5-7.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Build-depend on libtool-bin. Closes: #761773.
+  * liblua5.1-0-dev: Recommend libtool-bin.
+
+ -- Matthias Klose <doko@debian.org>  Thu, 09 Oct 2014 09:49:29 +0000
+
 lua5.1 (5.1.5-7pexip1) pexip; urgency=low
 
   * New upstream release.
