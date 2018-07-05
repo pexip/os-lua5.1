@@ -9,7 +9,7 @@ Standards-Version: 3.9.3
 Homepage: http://www.lua.org
 Vcs-Git: git://git.debian.org/git/pkg-lua/lua5.1.git
 Vcs-Browser: http://git.debian.org/?p=pkg-lua/lua5.1.git
-XS-Pexip-Upstream: http://ftp.debian.org/debian/ jessie
+XS-Pexip-Upstream: http://ftp.debian.org/debian/ stretch
 
 Package: lua5.1-doc
 Architecture: all
