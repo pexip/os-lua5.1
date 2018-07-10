@@ -1,3 +1,17 @@
+lua5.1 (5.1.5-8.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Export _IO_stdin_used in debian/version-script (see #816059).
+
+ -- Aurelien Jarno <aurel32@debian.org>  Sun, 31 Jul 2016 20:57:20 +0200
+
+lua5.1 (5.1.5-8) unstable; urgency=medium
+
+  * Symbols versioning 
+  * Acknowledge NMU
+
+ -- Enrico Tassi <gareuselesinge@debian.org>  Fri, 14 Aug 2015 11:01:41 +0200
+
 lua5.1 (5.1.5-7.1pexip1) pexip; urgency=low
 
   * New upstream release.
