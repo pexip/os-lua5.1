@@ -1,3 +1,15 @@
+lua5.1 (5.1.5-8.1+b2pexip4) pexip; urgency=medium
+
+  * Rebuild in buster environment
+
+ -- Steve McIntyre <steve.mcintyre@pexip.com>  Thu, 16 Jul 2020 15:53:08 +0000
+
+lua5.1 (5.1.5-8.1+b2pexip3) pexip; urgency=medium
+
+  * No-change rebuild
+
+ -- Steve McIntyre <steve.mcintyre@pexip.com>  Thu, 16 Jul 2020 16:51:26 +0100
+
 lua5.1 (5.1.5-8.1+b2pexip2) pexip; urgency=medium
 
   * Migrate to Buster
